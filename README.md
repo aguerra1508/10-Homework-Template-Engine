@@ -15,7 +15,7 @@ Link to video on project performance and usage:
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
-  * [Badges] (#badges)
+  * [Badges](#badges)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -42,7 +42,7 @@ No license
 
 ## Badges
 
-
+![GitHub top language](https://img.shields.io/github/languages/top/aguerra1508/10-Homework-Template-Engine)
   
 ## Contributing
   
