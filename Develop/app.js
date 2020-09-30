@@ -26,8 +26,7 @@ const newTeam = []
 
 //Manager function
 function newManager() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             type: "input",
             message: "What is your name?",
             name: "name"
@@ -39,7 +38,7 @@ function newManager() {
         },
         {
             type: "email",
-            message: "What is your email address?", 
+            message: "What is your email address?",
             name: "email",
         },
         {
@@ -56,8 +55,7 @@ function newManager() {
 
 //Add new employee type function
 function newEmployee() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             type: "list",
             message: "Select a new employee type to add.",
             name: "newEmployee",
@@ -66,22 +64,28 @@ function newEmployee() {
                 "Engineer",
                 "No new employees"
             ]
-        }
-    ]).then(function (answer) {
-        if(answer.newEmployee === "Intern") {
-            newIntern();
-        } else if (answer.newEmployee === "Engineer") {
-            newEngineer();
-        } else {
-            //render();
-        }
-    })
+        }])
+        .then(answer => {
+            switch (answer.newEmployee) {
+                case "Intern": {
+                    newIntern();
+                    break;
+                }
+                case "Engineer": {
+                    newEngineer();
+                    break;
+                }
+                case "No new employees": {
+                    renderHTML();
+                    break;
+                }
+            }
+        })
 }
 
 //Intern function
 function newIntern() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             type: "input",
             message: "What is the Intern's name?",
             name: "name"
@@ -93,12 +97,12 @@ function newIntern() {
         },
         {
             type: "email",
-            message: "What is the Intern's email address?", 
+            message: "What is the Intern's email address?",
             name: "email",
         },
         {
             type: "input",
-            message: "What is the Intern's school?", 
+            message: "What is the Intern's school?",
             name: "school",
         },
     ]).then(function (answers) {
@@ -110,8 +114,7 @@ function newIntern() {
 
 //Engineer function
 function newEngineer() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             type: "input",
             message: "What is the Engineer's name?",
             name: "name"
@@ -123,12 +126,12 @@ function newEngineer() {
         },
         {
             type: "email",
-            message: "What is the Engineer's email address?", 
+            message: "What is the Engineer's email address?",
             name: "email",
         },
         {
             type: "input",
-            message: "What is the Engineer's GitHub username?", 
+            message: "What is the Engineer's GitHub username?",
             name: "github",
         },
     ]).then(function (answers) {
@@ -137,16 +140,21 @@ function newEngineer() {
         newEmployee();
     })
 }
+
+newManager();
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-//function render() {
-//}
-
-newManager();
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
+function renderHTML() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(newTeam), "utf-8");
+}
