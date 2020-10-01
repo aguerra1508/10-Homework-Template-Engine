@@ -10,8 +10,6 @@ Link to video on project performance and usage: https://drive.google.com/file/d/
 
 Link to video on tests of project: https://drive.google.com/file/d/19j9r48hjDeUkYOwj6HyToVtowF_OODwT/view?usp=sharing
 
-View of completed output page: ![](2020-09-30-21-51-28.png)
-
 ## Table of Contents
 
   * [Description](#description)
