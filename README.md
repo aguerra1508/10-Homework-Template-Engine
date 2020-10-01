@@ -6,8 +6,12 @@ The purpose of this project is to build a software engineering team generator us
 
 URL of GitHub Repository: https://github.com/aguerra1508/10-Homework-Template-Engine
 
-Link to video on project performance and usage: 
-  
+Link to video on project performance and usage: https://drive.google.com/file/d/1SEuNaStzu18kmpOcHkYDdygqlK3Jhx5T/view?usp=sharing
+
+Link to video on tests of project: https://drive.google.com/file/d/19j9r48hjDeUkYOwj6HyToVtowF_OODwT/view?usp=sharing
+
+View of completed output page: ![](2020-09-30-21-51-28.png)
+
 ## Table of Contents
 
   * [Description](#description)
@@ -50,7 +54,7 @@ No contributing guidelines
   
 ## Tests
   
-No tests performed
+Tests can be found in the Develop/test folder.
 
 ## Questions
   
